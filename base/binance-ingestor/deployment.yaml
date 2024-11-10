@@ -5,6 +5,7 @@ metadata:
   labels:
     app: ingestor-binance
 spec:
+  revisionHistoryLimit: 0
   strategy:
     type: RollingUpdate
     rollingUpdate:

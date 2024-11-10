@@ -5,6 +5,7 @@ metadata:
   labels:
     app: data-lake-ingestor
 spec:
+  revisionHistoryLimit: 0
   strategy:
     type: RollingUpdate
     rollingUpdate:
