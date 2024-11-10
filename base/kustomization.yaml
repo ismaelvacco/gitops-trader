@@ -10,4 +10,4 @@ images:
   newTag: sha-389727e
 
 - name: ghcr.io/ismaelvacco/market-signal-engine
-  newTag: latest
+  newTag: sha-7d5f857
