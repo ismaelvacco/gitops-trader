@@ -32,9 +32,15 @@ spec:
               memory: 300Mi
           env:
             - name: CONFIG_REDIS_HOST
-              value: /etc/configs/redis_hostname
+              valueFrom:
+                configMapKeyRef:
+                  name: configs
+                  key: redis_hostname
             - name: CONFIG_REDIS_PASSWORD
-              value: /etc/configs/redis_password             
+              valueFrom:
+                configMapKeyRef:
+                  name: configs
+                  key: redis_password
           volumeMounts:
             - name: configs
               mountPath: /etc/configs
