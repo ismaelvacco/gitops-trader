@@ -1,0 +1,58 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: data-lake-ingestor
+  labels:
+    app: data-lake-ingestor
+spec:
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 20%
+  selector:
+    matchLabels:
+      app: data-lake-ingestor
+  template:
+    metadata:
+      labels:
+        app: data-lake-ingestor
+    spec:
+      imagePullSecrets:
+        - name: github-package
+      containers:
+        - name: data-lake-ingestor
+          image: ghcr.io/ismaelvacco/data-lake-ingestor:latest
+          resources:
+            requests:
+              cpu: 0.5
+              memory: 300Mi
+            limits:
+              cpu: 1
+              memory: 300Mi
+          env:
+            - name: CONFIG_POSTGRES_HOST
+              valueFrom:
+                configMapKeyRef:
+                  name: data-lake-ingestor
+                  key: postgres_hostname
+            - name: CONFIG_POSTGRES_USERNAME
+              valueFrom:
+                configMapKeyRef:
+                  name: data-lake-ingestor
+                  key: postgres_username
+            - name: CONFIG_POSTGRES_PASSWORD
+              valueFrom:
+                configMapKeyRef:
+                  name: data-lake-ingestor
+                  key: postgres_password
+            - name: CONFIG_POSTGRES_SSLMODE
+              valueFrom:
+                configMapKeyRef:
+                  name: data-lake-ingestor
+                  key: postgres_sslmode
+            - name: CONFIG_KAFKA_CONSUMER_GROUP
+              valueFrom:
+                configMapKeyRef:
+                  name: data-lake-ingestor
+                  key: kafka_consumer_group

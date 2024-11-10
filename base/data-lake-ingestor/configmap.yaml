@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: data-lake-ingestor
+data:
+  postgres_hostname: data-lake.c1guw0wsol88.us-east-1.rds.amazonaws.com
+  postgres_username: ella_fitzgerald
+  postgres_password: G18BiYp4kGipDUetEwp0Gqu89meL5P
+  postgres_sslmode: require
+  kafka_consumer_group: data_lake_ingestor_production

@@ -4,10 +4,12 @@ resources:
 - binance-ingestor
 - redis
 - market-signal-engine
+- data-lake-ingestor
 
 images:
 - name: ghcr.io/ismaelvacco/binance
   newTag: sha-389727e
-
 - name: ghcr.io/ismaelvacco/market-signal-engine
   newTag: sha-7d5f857
+- name: ghcr.io/ismaelvacco/data-lake-ingestor
+  newTag: latest
