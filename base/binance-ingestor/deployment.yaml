@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ingestor-binance
+  labels:
+    app: ingestor-binance
+spec:
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 20%
+  selector:
+    matchLabels:
+      app: ingestor-binance
+  template:
+    metadata:
+      labels:
+        app: ingestor-binance
+      imagePullSecrets:
+        - name: github-package
+      containers:
+        - name: ingestor-binance
+          image: ghcr.io/ismaelvacco/binance:latest
+          resources:
+            requests:
+              cpu: 0.5
+              memory: 300Mi
+            limits:
+              cpu: 1
+              memory: 300Mi
+          volumeMounts: []
