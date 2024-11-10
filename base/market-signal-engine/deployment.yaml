@@ -34,19 +34,10 @@ spec:
             - name: CONFIG_REDIS_HOST
               valueFrom:
                 configMapKeyRef:
-                  name: configs
+                  name: market-signal-engine
                   key: redis_hostname
             - name: CONFIG_REDIS_PASSWORD
               valueFrom:
                 configMapKeyRef:
-                  name: configs
+                  name: market-signal-engine
                   key: redis_password
-          volumeMounts:
-            - name: configs
-              mountPath: /etc/configs
-              readOnly: true
-      volumes:
-        - name: configs
-          configMap:
-            defaultMode: 420
-            name: market-signal-engine
