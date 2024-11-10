@@ -30,4 +30,15 @@ spec:
             limits:
               cpu: 1
               memory: 300Mi
-          volumeMounts: []
+          env:
+            - name: CONFIG_LOG_LEVEL_FILE
+              value: /etc/configs/log_level
+          volumeMounts:
+            - name: configs
+              mountPath: /etc/configs
+              readOnly: true
+      volumes:
+        - name: configs
+          configMap:
+            defaultMode: 420
+            name: market-signal-engine

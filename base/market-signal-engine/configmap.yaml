@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: market-signal-engine
+data:
+  redis_hostname: warn
+  cloud_environment: aws
+  email_internal_failure: exportfailed@flybits.com

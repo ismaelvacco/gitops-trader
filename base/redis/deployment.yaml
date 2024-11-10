@@ -23,6 +23,7 @@ spec:
       containers:
         - name: redis
           image: redis:7
+          args: ["sh", "-c", "redis-server --appendonly yes  --requirepass wzsI8tHtb2Sdsq"]
           resources:
             requests:
               cpu: 0.5
