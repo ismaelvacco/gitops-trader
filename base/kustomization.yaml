@@ -5,6 +5,7 @@ resources:
 - redis
 - market-signal-engine
 - data-lake-ingestor
+- rule-engine
 
 images:
 - name: ghcr.io/ismaelvacco/binance
