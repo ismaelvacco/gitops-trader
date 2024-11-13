@@ -14,3 +14,5 @@ images:
   newTag: sha-7d5f857
 - name: ghcr.io/ismaelvacco/data-lake-ingestor
   newTag: latest
+- name: ghcr.io/ismaelvacco/rule-engine
+  newTag: sha-1cbb846
