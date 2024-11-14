@@ -17,3 +17,5 @@ images:
   newTag: latest
 - name: ghcr.io/ismaelvacco/rule-engine
   newTag: sha-1cbb846
+- name: ghcr.io/ismaelvacco/order-management
+  newTag: sha-db7a6b1
