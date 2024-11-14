@@ -6,6 +6,7 @@ resources:
 - market-signal-engine
 - data-lake-ingestor
 - rule-engine
+- order-management
 
 images:
 - name: ghcr.io/ismaelvacco/binance
