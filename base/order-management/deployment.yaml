@@ -24,6 +24,9 @@ spec:
       containers:
         - name: order-management
           image: ghcr.io/ismaelvacco/order-management:latest
+          command:
+            - sleep
+            - "50"
           resources:
             requests:
               cpu: 0.5
