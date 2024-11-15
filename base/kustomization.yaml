@@ -18,4 +18,4 @@ images:
 - name: ghcr.io/ismaelvacco/rule-engine
   newTag: sha-e42710d
 - name: ghcr.io/ismaelvacco/order-management
-  newTag: sha-9f6e905
+  newTag: sha-9780fef
