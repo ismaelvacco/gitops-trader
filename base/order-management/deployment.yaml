@@ -24,7 +24,7 @@ spec:
       containers:
         - name: order-management
           image: ghcr.io/ismaelvacco/order-management:latest
-          command: ["sleep", "60"]
+          # command: ["sleep", "60"]
           ports:
             - containerPort: 8081
           resources:
