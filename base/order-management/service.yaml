@@ -1,0 +1,11 @@
+kind: Service
+metadata:
+  name: order-management
+spec:
+  clusterIP: None
+  ports:
+  - port: 8081
+    targetPort: 8081
+    name: order-management
+  selector:
+    app: order-management
