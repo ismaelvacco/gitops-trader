@@ -16,6 +16,6 @@ images:
 - name: ghcr.io/ismaelvacco/data-lake-ingestor
   newTag: latest
 - name: ghcr.io/ismaelvacco/rule-engine
-  newTag: sha-e42710d
+  newTag: sha-33940e4
 - name: ghcr.io/ismaelvacco/order-management
   newTag: sha-0b9cf42
